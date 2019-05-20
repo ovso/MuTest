@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">MuTest</string>
+  <string name="tab_text_1">검색</string>
+  <string name="tab_text_2">좋아요</string>
+</resources>

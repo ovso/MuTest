@@ -1,0 +1,6 @@
+<resources>
+  <string-array name="main_tabs">
+    <item>검색</item>
+    <item>좋아요</item>
+  </string-array>
+</resources>
