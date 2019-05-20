@@ -2,4 +2,6 @@
   <string name="app_name">MuTest</string>
   <string name="tab_text_1">검색</string>
   <string name="tab_text_2">좋아요</string>
+  <string name="search_search_btn">검색</string>
+  <string name="search_del_btn">삭제</string>
 </resources>
