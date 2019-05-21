@@ -1,4 +1,4 @@
-package io.github.ovso.mutest.ui.main
+package io.github.ovso.mutest.view.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
