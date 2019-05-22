@@ -33,6 +33,7 @@
           android:ems="10"
           android:hint="@string/search_search_hint"
           android:inputType="textPersonName"
+          android:text="@={viewModel.textChangeObField}"
           tools:ignore="Autofill,LabelFor"
           />
       <Button
@@ -40,6 +41,7 @@
           android:layout_width="0dp"
           android:layout_height="match_parent"
           android:layout_weight="1"
+          android:onClick="@{()->viewModel.onSearchClick()}"
           android:text="@string/search_search_btn"
           />
       <Button
