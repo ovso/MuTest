@@ -9,8 +9,8 @@ class MainPagerAdapter(private var titles: Array<String>, fm: FragmentManager) :
   FragmentPagerAdapter(fm) {
   override fun getItem(position: Int) =
     when (position == 0) {
-      true -> SearchFragment.newInstance(position)
-      false -> LikeFragment.newInstance(position)
+      true -> SearchFragment.newInstance()
+      false -> LikeFragment.newInstance()
     }
 
   override fun getPageTitle(position: Int) = titles[position]

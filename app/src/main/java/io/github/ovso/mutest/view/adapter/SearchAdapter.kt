@@ -31,11 +31,13 @@ class SearchAdapter() : PagedListAdapter<Item, SearchViewHolder>(DIFF_CALLBACK) 
   ), LayoutContainer {
 
     companion object {
-      fun create(parent: ViewGroup): SearchViewHolder {
-        return SearchViewHolder(
-          LayoutInflater.from(parent.context).inflate(R.layout.item_main, parent, false)
+      fun create(parent: ViewGroup) = SearchViewHolder(
+        LayoutInflater.from(parent.context).inflate(
+          R.layout.item_main,
+          parent,
+          false
         )
-      }
+      )
     }
   }
 }

@@ -14,9 +14,7 @@ class LikeFragment : Fragment() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    viewModel = ViewModelProviders.of(this).get(LikeViewModel::class.java).apply {
-      setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
-    }
+    viewModel = ViewModelProviders.of(this).get(LikeViewModel::class.java)
   }
 
   override fun onCreateView(
@@ -28,14 +26,7 @@ class LikeFragment : Fragment() {
   }
 
   companion object {
-    private const val ARG_SECTION_NUMBER = "section_number"
     @JvmStatic
-    fun newInstance(sectionNumber: Int): LikeFragment {
-      return LikeFragment().apply {
-        arguments = Bundle().apply {
-          putInt(ARG_SECTION_NUMBER, sectionNumber)
-        }
-      }
-    }
+    fun newInstance() = LikeFragment()
   }
 }
