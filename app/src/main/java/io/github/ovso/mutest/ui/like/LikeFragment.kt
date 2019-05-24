@@ -1,4 +1,4 @@
-package io.github.ovso.mutest.view.ui.main.like
+package io.github.ovso.mutest.ui.like
 
 import android.os.Bundle
 import android.view.LayoutInflater

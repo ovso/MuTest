@@ -1,9 +1,9 @@
-package io.github.ovso.mutest.view.ui.main
+package io.github.ovso.mutest.ui
 
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import io.github.ovso.mutest.view.ui.main.like.LikeFragment
-import io.github.ovso.mutest.view.ui.main.search.SearchFragment
+import io.github.ovso.mutest.ui.like.LikeFragment
+import io.github.ovso.mutest.ui.search.SearchFragment
 
 class MainPagerAdapter(private var titles: Array<String>, fm: FragmentManager) :
   FragmentPagerAdapter(fm) {

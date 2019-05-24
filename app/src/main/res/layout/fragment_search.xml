@@ -7,7 +7,7 @@
   <data>
     <variable
         name="viewModel"
-        type="io.github.ovso.mutest.view.ui.main.search.SearchViewModel"
+        type="io.github.ovso.mutest.ui.search.SearchViewModel"
         />
   </data>
   <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,7 +33,7 @@
           android:ems="10"
           android:hint="@string/search_search_hint"
           android:inputType="textPersonName"
-          android:text="@={viewModel.textChangeObField}"
+          android:text="@={viewModel.textChangedObField}"
           tools:ignore="Autofill,LabelFor"
           />
       <Button
@@ -49,6 +49,7 @@
           android:layout_width="0dp"
           android:layout_height="match_parent"
           android:layout_weight="1"
+          android:onClick="@{()->viewModel.onRemoveClick()}"
           android:text="@string/search_del_btn"
           />
     </LinearLayout>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="io.github.ovso.mutest">
 
+  <uses-permission android:name="android.permission.INTERNET"/>
   <application
       android:name=".App"
       android:allowBackup="true"
@@ -13,8 +14,9 @@
       android:theme="@style/AppTheme"
       tools:ignore="AllowBackup,GoogleAppIndexingWarning">
     <activity
-        android:name="io.github.ovso.mutest.view.ui.main.MainActivity"
+        android:name="io.github.ovso.mutest.ui.MainActivity"
         android:label="@string/app_name"
+        android:screenOrientation="portrait"
         android:theme="@style/AppTheme.NoActionBar">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
