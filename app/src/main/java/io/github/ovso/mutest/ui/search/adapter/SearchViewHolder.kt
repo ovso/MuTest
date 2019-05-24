@@ -1,29 +1,30 @@
 package io.github.ovso.mutest.ui.search.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import io.github.ovso.mutest.R.layout
+import io.github.ovso.mutest.R
 import io.github.ovso.mutest.api.model.Item
-import kotlinx.android.extensions.LayoutContainer
-import timber.log.Timber
+import io.github.ovso.mutest.databinding.ItemAllBinding
 
-class SearchViewHolder(override val containerView: View?) :
-  RecyclerView.ViewHolder(containerView!!), LayoutContainer {
-
+class SearchViewHolder(private val binding: ItemAllBinding) :
+  RecyclerView.ViewHolder(binding.root) {
   fun bindTo(item: Item?) {
-    Timber.d("bindTo(${item?.login})")
+    binding.item = item
+
   }
 
   companion object {
-    fun create(parent: ViewGroup) = SearchViewHolder(
-      LayoutInflater.from(parent.context).inflate(
-        layout.item_main,
-        parent,
-        false
+    fun create(parent: ViewGroup) =
+      SearchViewHolder(
+        DataBindingUtil.inflate(
+          LayoutInflater.from(parent.context),
+          R.layout.item_all,
+          parent,
+          false
+        )
       )
-    )
   }
 
 }

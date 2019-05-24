@@ -5,4 +5,5 @@
   <string name="search_search_btn">검색</string>
   <string name="search_del_btn">삭제</string>
   <string name="search_search_hint">유저명 입력</string>
+  <string name="all_like">좋아요</string>
 </resources>
