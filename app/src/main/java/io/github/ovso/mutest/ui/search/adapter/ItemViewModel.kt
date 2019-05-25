@@ -13,7 +13,7 @@ class ItemViewModel(private val item: Item?) {
     get() = item?.score?.toString()
   val avatar: String?
     get() = item?.avatar_url
-  val progress: Float?
+  val progress: Float
     get() = if (item!!.like) 100f else 0f
 
   fun onLikeClick(v: View) {

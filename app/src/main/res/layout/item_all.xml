@@ -77,7 +77,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:onClick="@{viewModel.onLikeClick}"
+        android:onClick="@{viewModel::onLikeClick}"
         android:progress="@{viewModel.progress}"
         app:layout_constraintBottom_toBottomOf="@+id/imageview_item_thumb"
         app:layout_constraintEnd_toEndOf="parent"
