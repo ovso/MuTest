@@ -2,6 +2,7 @@ package io.github.ovso.mutest.ui.search.adapter
 
 import android.view.View
 import com.airbnb.lottie.LottieAnimationView
+import io.github.ovso.mutest.App
 import io.github.ovso.mutest.api.model.Item
 
 class ItemViewModel(private val item: Item?) {
@@ -18,11 +19,12 @@ class ItemViewModel(private val item: Item?) {
   fun onLikeClick(v: View) {
     item?.let {
       if (!it.like) {
-        item.like = true
-        val lottie = v as LottieAnimationView
-        lottie.playAnimation()
+        it.like = true
+        (v as? LottieAnimationView)?.playAnimation()
+        App.rxBus.send(RxBusEventLike(it))
       }
     }
-
   }
+
+  class RxBusEventLike(val item: Item)
 }

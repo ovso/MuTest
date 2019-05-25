@@ -6,7 +6,10 @@ import timber.log.Timber
 import timber.log.Timber.DebugTree
 
 class App : Application() {
-  val rxBus = RxBus()
+  companion object {
+    val rxBus = RxBus()
+  }
+
   override fun onCreate() {
     super.onCreate()
     if (BuildConfig.DEBUG) {
