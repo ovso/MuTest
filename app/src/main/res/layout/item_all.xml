@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
   <data>
     <variable
         name="item"
         type="io.github.ovso.mutest.api.model.Item"
         />
+    <variable
+        name="viewModel"
+        type="io.github.ovso.mutest.ui.search.adapter.ItemViewModel"
+        />
   </data>
   <androidx.constraintlayout.widget.ConstraintLayout
-      xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
       android:layout_width="match_parent"
       android:layout_height="150dp"
       >
@@ -22,7 +27,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
-        app:image_url="@{item.avatar_url}"
+        app:image_url="@{viewModel.avatar}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +44,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@{item.login}"
+        android:text="@{viewModel.name}"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageview_item_thumb"
@@ -55,28 +60,34 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:text="@{viewModel.score}"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageview_item_thumb"
         app:layout_constraintTop_toBottomOf="@+id/textview_item_name"
         tools:text="101.546"
         />
-    <Button
-        android:id="@+id/button_item_like"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_item_like"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/all_like"
+        android:onClick="@{viewModel.onLikeClick}"
+        android:progress="@{viewModel.progress}"
         app:layout_constraintBottom_toBottomOf="@+id/imageview_item_thumb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageview_item_thumb"
         app:layout_constraintTop_toBottomOf="@+id/textview_item_score"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="like.json"
+        app:lottie_loop="false"
         />
+
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

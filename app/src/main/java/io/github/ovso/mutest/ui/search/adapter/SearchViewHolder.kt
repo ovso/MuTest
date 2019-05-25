@@ -10,9 +10,9 @@ import io.github.ovso.mutest.databinding.ItemAllBinding
 
 class SearchViewHolder(private val binding: ItemAllBinding) :
   RecyclerView.ViewHolder(binding.root) {
-  fun bindTo(item: Item?) {
-    binding.item = item
 
+  fun bindTo(item: Item?) {
+    binding.viewModel = ItemViewModel(item)
   }
 
   companion object {

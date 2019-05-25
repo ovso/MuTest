@@ -6,7 +6,6 @@ data class SearchResult(
   var total_count: Int
 )
 
-
 data class Item(
   var avatar_url: String,
   var events_url: String,
@@ -26,5 +25,6 @@ data class Item(
   var starred_url: String,
   var subscriptions_url: String,
   var type: String,
-  var url: String
+  var url: String,
+  var like: Boolean
 )
